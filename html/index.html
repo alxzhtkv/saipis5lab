@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/script.js"></script>
+
+    <title>Auto</title>
+</head>
+<body>
+    <header>
+<h1 class="title">Parking</h1>
+    </header>
+
+    <main class="questionnaire">
+        <h1>Enter the form</h1>
+       <form id="form">
+       
+        <div class="form">
+            <label class="labelForm">Your full name:</label>
+            <input id="name" type="text" required placeholder="full name">
+        </div>
+
+        <!-- <div class="form">
+            <label class="labelForm" for="title">Сar company:</label>
+            <input id = "company" type="text" required placeholder="Сar company">
+        </div> -->
+        <div class="form">
+            <label id="company">
+                Сar company:
+               <select id="selest-option" name="selest">
+    
+                <option value="Toyota">Toyota</option>
+                <option value="Vol">Volkswagen</option>
+                <option value="Ford">Ford</option>
+                <option value="Honda">Honda</option>
+                <option value="Fiat">Fiat</option>
+                <option value="Nissan">Nissan</option>
+                <option value="Mercedes">Mercedes</option>
+                <option value="BMW">BMW</option>
+                <option value="Other">Other</option>
+               </select>
+                
+            </label>
+        </div>
+        
+        
+        <div class="form">
+            <label class="labelForm">Car number:</label>
+            <input type="text" id="number" name ="number" pattern="[0-9]{4}[A-Z\s]+${2}" required placeholder="1234 AB-7" >
+        </div>
+        <div class="form">
+            <label class="labelForm" >Parking time:</label>
+            <input type="number" id ="time" required placeholder="time" min = "1" max="168">
+        </div>
+      
+        <div class="form1">
+         
+        </div>
+        <div id = "message"></div>
+        <div class="butForm">
+            <input class="but-clear" type="reset" value="Очистить форму">
+            <input class="but-add" id="add" type="submit" value="Добавить запись">
+        </div>
+
+       </form>
+<br><br>
+       <div class="buttons">
+        <input class="but-delete" type="submit" value="Удалить запись">
+        <select class="id"></select>
+        <input class="but-show" type="submit" value="Показать все записи в таблице">
+        <input class="but-modal" type="submit" value="Добавить новый признак">
+        <input class="butMinMax" type="submit" value="Min/Max">
+    </div>
+    <table class="result__table">
+        <tr>
+            <th>ID</th>
+            <th>Full name</th>
+            <th>Сar company</th>
+            <th>Car number</th>
+            <th>Parking time</th>
+           
+        </tr>
+    </table>
+<!-- <div class="modal">
+    <input class="modalClose" type="submit" value="Добавить признак">
+    <input id="modalText" type="text">
+</div> -->
+    </main>
+    
+</body>
+</html>

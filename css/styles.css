@@ -1,0 +1,70 @@
+body{
+    background-image:url(https://images.wallpaperscraft.ru/image/single/mclaren_p1_chernyj_vid_speredi_100433_1920x1080.jpg);
+    background-size: cover;
+    position: relative;
+
+    
+
+}
+.title{
+    text-align: center;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 60px;
+    color: rgb(180, 167, 153);
+  
+  }
+
+.questionnaire{
+    position: relative;
+    padding: 15px;
+    top: 0;
+    left: 0;
+    border: none;
+    border-radius: 10px 10px 10px 10px;
+    font-size: 20px;
+   background-color: rgba(39, 39, 39, 0.873);;
+    /* box-shadow: 10px 10px 10px rgb(39 39 39), -10px 10px 10px rgb(39 39 39); */
+    /* height: 840px; */
+    max-width: 90%;
+    margin: 0 auto 10px;
+    color: rgb(180, 167, 153);
+    /* text-align: center; */
+    justify-content:space-between;
+    
+}
+.form {
+    margin-bottom: 10px;
+}
+
+.result__table{
+    position: relative;
+    text-align: center;
+
+}
+table th {
+	font-weight: bold;
+	padding: 5px;
+	background: #efefef;
+	border: 1px solid #dddddd;
+    font-family: "Century Gothic";
+}
+table td {
+
+	border: 1px solid #dddddd;
+	padding: 5px;
+}
+
+/* .back
+{
+    position: relative;
+    top: 5px;
+    left: 275px;
+    width: 900px;
+    height: 750px;
+    text-align: center;
+    background: linear-gradient(rgb(29, 53, 79), rgba(255, 255, 255, 0.836));
+    opacity: 0.95;
+    box-shadow: 0 0 15px rgb(160 160 250 / 50%);
+} */
+
