@@ -1,94 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css">
     <script src="../js/script.js"></script>
-
+    <script src="../js/templates.js"></script>
+    <script src="../js/helpers.js"></script>
+    <script src="../js/parking_dto.js"></script>
+    <script src="../js/database.js"></script>
     <title>Auto</title>
 </head>
+
 <body>
     <header>
-<h1 class="title">Parking</h1>
+        <h1 class="title">Parking</h1>
     </header>
 
     <main class="questionnaire">
         <h1>Enter the form</h1>
-       <form id="form">
-       
-        <div class="form">
-            <label class="labelForm">Your full name:</label>
-            <input id="name" type="text" required placeholder="full name">
-        </div>
-
-        <!-- <div class="form">
-            <label class="labelForm" for="title">Сar company:</label>
-            <input id = "company" type="text" required placeholder="Сar company">
-        </div> -->
-        <div class="form">
-            <label id="company">
-                Сar company:
-               <select id="selest-option" name="selest">
-    
-                <option value="Toyota">Toyota</option>
-                <option value="Vol">Volkswagen</option>
-                <option value="Ford">Ford</option>
-                <option value="Honda">Honda</option>
-                <option value="Fiat">Fiat</option>
-                <option value="Nissan">Nissan</option>
-                <option value="Mercedes">Mercedes</option>
-                <option value="BMW">BMW</option>
-                <option value="Other">Other</option>
-               </select>
-                
-            </label>
-        </div>
-        
-        
-        <div class="form">
-            <label class="labelForm">Car number:</label>
-            <input type="text" id="number" name ="number" pattern="[0-9]{4}[A-Z\s]+${2}" required placeholder="1234 AB-7" >
-        </div>
-        <div class="form">
-            <label class="labelForm" >Parking time:</label>
-            <input type="number" id ="time" required placeholder="time" min = "1" max="168">
-        </div>
-      
-        <div class="form1">
-         
-        </div>
-        <div id = "message"></div>
+        <form id="form"></form>
         <div class="butForm">
-            <input class="but-clear" type="reset" value="Очистить форму">
-            <input class="but-add" id="add" type="submit" value="Добавить запись">
+            <button class="button" id="btn__clear_form">Очистить форму</button>
+            <button class="button" id="btn__add">Записать</button>
         </div>
+        <br>
+        <div class="buttons">
+            <div>
+                <button class="button" id="btn__delete_by_id">Удалить запись по ID</button>
+                <select id="select__id_to_delete"></select>
+            </div>
 
-       </form>
-<br><br>
-       <div class="buttons">
-        <input class="but-delete" type="submit" value="Удалить запись">
-        <select class="id"></select>
-        <input class="but-show" type="submit" value="Показать все записи в таблице">
-        <input class="but-modal" type="submit" value="Добавить новый признак">
-        <input class="butMinMax" type="submit" value="Min/Max">
-    </div>
-    <table class="result__table">
-        <tr>
-            <th>ID</th>
-            <th>Full name</th>
-            <th>Сar company</th>
-            <th>Car number</th>
-            <th>Parking time</th>
-           
-        </tr>
-    </table>
-<!-- <div class="modal">
-    <input class="modalClose" type="submit" value="Добавить признак">
-    <input id="modalText" type="text">
-</div> -->
+            <button class="button" id="btn__view_all">Показать все записи в таблице</button>
+            <button class="button" id="btn__create_new_field">Добавить новый признак</button>
+            <button class="button" id="btn__view_min_max">Min/Max</button>
+        </div>
+        <table id="result__table" class="hidden">
+        </table>
+        <div id="div__create_new_field" class="hidden">
+            <div>
+                <label for="new_field__name" class="labelForm">New field name:</label>
+                <input type="text" id="new_field__name" placeholder="name">
+            </div>
+            <div>
+                <label for="new_field_type" class="labelForm">New field type:</label>
+                <select name="new_field_type" id="new_field_type">
+                    <option value="text">text</option>
+                    <option value="number">number</option>
+                    <option value="date">date</option>
+                </select>
+            </div>
+            <button class="button" id="button__add_new_field">Добавить</button>
+
+        </div>
     </main>
-    
+
 </body>
+
 </html>

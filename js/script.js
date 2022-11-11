@@ -1,21 +1,75 @@
-const tableName = "parking";
-const selector = document.querySelector('.id');
-const table = document.querySelector('.result__table');
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelector("#btn__clear_form").addEventListener("click", (ev) => {
+        ev.preventDefault();
+        document.querySelector("#form").reset();
+    })
 
-let flag = false;
-let newRows = "";
+    document.querySelector("#btn__add").addEventListener("click", (ev) => {
+        let obj = getObject();
 
-db = openDatabase("MyDB", "0.1", "parking", 1024 * 10);
-if (!db) {
-    alert("Не удалось подключиться к базе данных.");
-};
+        if (!obj.validate())
+            return alert("Invalid data!");
 
-db.transaction((tx) => {
-    tx.executeSql("CREATE TABLE IF NOT EXISTS parking1 ( id integer primary key autoincrement, name TEXT UNIQUE, company TEXT, number TEXT, time INTEGER);", []);
-    
-},
-    tx => {
-        console.log("Таблица создана");
-        // updateSelector();
-    }
-);
+        ParkingDto.insert(obj);
+    })
+
+    document.querySelector("#btn__view_all").addEventListener("click", (ev) => {
+        ParkingDto.get(generateTableData);
+    })
+
+    document.querySelector("#btn__delete_by_id").addEventListener("click", (ev) => {
+        let select = document.querySelector("#select__id_to_delete");
+        if (select.selectedOptions[0]) {
+            id = select.selectedOptions[0].value;
+            ParkingDto.deleteById(id);
+
+            window.location.reload();
+        }
+
+    })
+
+    document.querySelector("#btn__create_new_field").addEventListener("click", (ev) => {
+        let divNewField = document.querySelector("#div__create_new_field");
+        divNewField.classList.remove("hidden");
+
+        document.querySelector("#button__add_new_field").addEventListener("click", (ev) => {
+            processNewField();
+        })
+
+    })
+
+    document.querySelector("#btn__view_min_max").addEventListener("click", (ev) => {
+        ParkingDto.getMaxAndMinParkingTime(generateTableData);
+    })
+
+
+});
+
+
+
+function processNewField() {
+    let fieldName = document.querySelector("#new_field__name").value;
+
+    if (!fieldName) { return alert("Can't be created with empty name!") }
+    let fieldType = document.querySelector("#new_field_type").selectedOptions[0].value;
+
+    formFields.push(
+        {
+            label: {
+                class: "label__title",
+                for: fieldName.toLowerCase(),
+                text: fieldName,
+                require: false,
+            },
+            input: {
+                type: fieldType,
+                id: fieldName.toLowerCase(),
+                placeholder: fieldName,
+                required: false,
+                pattern: null,
+            }
+        }
+    )
+
+    generateFormsFields();
+}

@@ -1,21 +1,22 @@
-body{
-    background-image:url(https://images.wallpaperscraft.ru/image/single/mclaren_p1_chernyj_vid_speredi_100433_1920x1080.jpg);
+body {
+    background-image: url(https://images.wallpaperscraft.ru/image/single/mclaren_p1_chernyj_vid_speredi_100433_1920x1080.jpg);
     background-size: cover;
     position: relative;
 
-    
+
 
 }
-.title{
+
+.title {
     text-align: center;
     font-size: 50px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 60px;
     color: rgb(180, 167, 153);
-  
-  }
 
-.questionnaire{
+}
+
+.questionnaire {
     position: relative;
     padding: 15px;
     top: 0;
@@ -23,37 +24,64 @@ body{
     border: none;
     border-radius: 10px 10px 10px 10px;
     font-size: 20px;
-   background-color: rgba(39, 39, 39, 0.873);;
+    background-color: rgba(39, 39, 39, 0.873);
+    ;
     /* box-shadow: 10px 10px 10px rgb(39 39 39), -10px 10px 10px rgb(39 39 39); */
     /* height: 840px; */
     max-width: 90%;
     margin: 0 auto 10px;
     color: rgb(180, 167, 153);
     /* text-align: center; */
-    justify-content:space-between;
-    
+    justify-content: space-between;
+
 }
+
 .form {
     margin-bottom: 10px;
 }
 
-.result__table{
+#result__table {
     position: relative;
     text-align: center;
 
 }
+
 table th {
-	font-weight: bold;
-	padding: 5px;
-	background: #efefef;
-	border: 1px solid #dddddd;
+    font-weight: bold;
+    padding: 5px;
+    background: #efefef;
+    border: 1px solid #dddddd;
     font-family: "Century Gothic";
 }
+
 table td {
 
-	border: 1px solid #dddddd;
-	padding: 5px;
+    border: 1px solid #dddddd;
+    padding: 5px;
 }
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+.hidden {
+    display: none;
+}
+
+.button {
+    background: rgb(255, 0, 0);
+    margin: 10px;
+    padding: 8px 15px 8px 15px;
+    border: none;
+    color: #fff;
+}
+
+.button:hover {
+    background: #0c0c0c;
+    box-shadow: none;
+}
+
 
 /* .back
 {
@@ -67,4 +95,3 @@ table td {
     opacity: 0.95;
     box-shadow: 0 0 15px rgb(160 160 250 / 50%);
 } */
-
